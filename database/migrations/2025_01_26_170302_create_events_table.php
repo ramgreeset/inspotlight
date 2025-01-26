@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('event_start');
             $table->date('event_end');
             $table->string('location');
+            $table->integer('price');
             $table->timestamps();
         });
     }
