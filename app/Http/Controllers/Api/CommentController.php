@@ -13,7 +13,7 @@ use Illuminate\Http\Response;
 class CommentController extends Controller
 {
     public function index() {
-        return CommentResource::collection(Comment::all());
+        return CommentResource::collection(Comment::all())->resolve();
     }
     public function show (Comment $category) {
         return CommentResource::make($category)->resolve();

@@ -15,12 +15,12 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::apiResource('categories', CategoryController::class);
-Route::apiResource('tags', CommentController::class);
-Route::apiResource('comments', EventController::class);
-Route::apiResource('events', ProfileController::class);
-Route::apiResource('profiles', RatingController::class);
-Route::apiResource('ratings', RoleController::class);
-Route::apiResource('roles', TagController::class);
+Route::apiResource('comments', CommentController::class);
+Route::apiResource('events', EventController::class);
+Route::apiResource('profiles', ProfileController::class);
+Route::apiResource('ratings', RatingController::class);
+Route::apiResource('roles', RoleController::class);
+Route::apiResource('tags', TagController::class);
 
 
 
