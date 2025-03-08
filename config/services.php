@@ -35,6 +35,7 @@ return [
         ],
     ],
     'vk' => [
-        'token' => env('VK_TOKEN'),
+        'version' => env('VK_API_VERSION'),
+        'token' => env('VK_API_TOKEN'),
     ]
 ];

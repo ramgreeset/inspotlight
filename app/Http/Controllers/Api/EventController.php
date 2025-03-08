@@ -9,18 +9,21 @@ use App\Http\Resources\Event\EventResource;
 use App\Models\Event;
 use App\Services\VkApiService;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Http;
 
 class EventController extends Controller
 {
     public function index()
     {
-        $group = [
-            30651595,403068,210639178
-        ];
-        foreach ($group as $item) {
-            dump(VkApiService::wallGet($item,1));
+        $inSpotlightGroups = VkApiService::groupGet(861493961);
+        foreach ($inSpotlightGroups as $group){
+            $groupPost = VkApiService::wallGet($group['id'], 1);
+            echo '<b>' . $group['name'] . '</b>';
+            echo '<br>';
+            echo $groupPost[0]['text'];
+            echo '<br>';
+            echo '<br>';
         }
+
 
         dd("End");
         return EventResource::collection(Event::all())->resolve();
